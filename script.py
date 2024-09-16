@@ -17,11 +17,17 @@ from mpl_toolkits.mplot3d import Axes3D
 # stopTime = 53
 # samplePeriod = 1/256
 
-filePath = 'datasets/spiralStairs'
-startTime = 4
-stopTime = 47
-samplePeriod = 1/256
+# filePath = 'datasets/spiralStairs'
+# startTime = 4
+# stopTime = 47
+# samplePeriod = 1/256
 
+# filePath = 'datasets/circle'
+# filePath = 'datasets/wave'
+filePath = 'datasets/TraningData_9_5_trans/Horn_5'
+startTime = 1
+stopTime = 150
+samplePeriod = 1
 
 def main():
     xIMUdata = xIMU.xIMUdataClass(filePath, 'InertialMagneticSampleRate', 1/samplePeriod)
@@ -55,9 +61,9 @@ def main():
     acc_magFilt = np.abs(acc_magFilt)
 
     # LP filter accelerometer data
-    filtCutOff = 5
-    b, a = signal.butter(1, (2*filtCutOff)/(1/samplePeriod), 'lowpass')
-    acc_magFilt = signal.filtfilt(b, a, acc_magFilt, padtype = 'odd', padlen=3*(max(len(b),len(a))-1))
+    filtCutOff = 0.005  # 调整为合适的值
+    b, a = signal.butter(1, (2 * filtCutOff) / (1 / samplePeriod), 'lowpass')
+    acc_magFilt = signal.filtfilt(b, a, acc_magFilt, padtype='odd', padlen=3 * (max(len(b), len(a)) - 1))
 
 
     # Threshold detection

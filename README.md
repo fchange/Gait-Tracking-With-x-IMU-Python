@@ -1,37 +1,22 @@
-# Gait Tracking with x-imu Python
-This is the Python code of the [Gait-Tracking-With-x-IMU](https://github.com/xioTechnologies/Gait-Tracking-With-x-IMU) by [xioTechnologies](https://github.com/xioTechnologies), which originally run on MATLAB.
+# 原项目地址 https://github.com/daehwa/Gait-Tracking-With-x-IMU-Python
+
+# 该脚本
+
+主要做了两件事：
+
+## transData.py
+解析目录并转换成csv
+from datasets/TraningData_9_5/*.txt
+to datasets/TraningData_9_5_trans/*_CalInertialAndMag.csv
+
+## calc.py
+输入csv文件，计算并打印对应的数据到图片
+from datasets/TraningData_9_5_trans/*_CalInertialAndMag.csv
+to 
+ - calc/*_magFile.png
+ - calc/*_position.png
+ - calc/*_trajectory.png
+ - calc/*_velocity.png
 
 
-The project Gait-Tracking-With-x-IMU is for the foot tracking algorithm demonstrated in Seb Madgwick's "[3D Tracking with IMU](https://www.youtube.com/watch?v=6ijArKE8vKU)" video. The foot tracking is enabled through [dead reckoning](https://en.wikipedia.org/wiki/Dead_reckoning) and integral drift corrected for each time the foot hit the ground.
-Please also see their [original post](http://www.x-io.co.uk/gait-tracking-with-x-imu/).
 
-
-## Several Examples of Result 
-I provide several results of this Python code, comparing with the results of the original code on MATLAB.
-
-### spiralStairs_CalInertialAndMag.csv
-
-Python (This repository)           |  MATLAB ([xioTechnologies](https://github.com/xioTechnologies)'s)
-:-------------------------:|:-------------------------:
-![](./image/3_4_python.png)  |  ![](./image/3_4_matlab.png)
-![](./image/3_1_python.png)  |  ![](./image/3_1_matlab.png)
-![](./image/3_2_python.png)  |  ![](./image/3_2_matlab.png)
-![](./image/3_3_python.png)  |  ![](./image/3_3_matlab.png)
-
-### straightLine_CalInertialAndMag.csv
-
-Python (This repository)           |  MATLAB ([xioTechnologies](https://github.com/xioTechnologies)'s)
-:-------------------------:|:-------------------------:
-![](./image/1_4_python.png)  |  ![](./image/1_4_matlab.png)
-![](./image/1_1_python.png)  |  ![](./image/1_1_matlab.png)
-![](./image/1_2_python.png)  |  ![](./image/1_2_matlab.png)
-![](./image/1_3_python.png)  |  ![](./image/1_3_matlab.png)
-
-### stairsAndCorridor_CalInertialAndMag.csv
-
-Python (This repository)           |  MATLAB ([xioTechnologies](https://github.com/xioTechnologies)'s)
-:-------------------------:|:-------------------------:
-![](./image/2_4_python.png)  |  ![](./image/2_4_matlab.png)
-![](./image/2_1_python.png)  |  ![](./image/2_1_matlab.png)
-![](./image/2_2_python.png)  |  ![](./image/2_2_matlab.png)
-![](./image/2_3_python.png)  |  ![](./image/2_3_matlab.png)
